@@ -1,0 +1,54 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry} % Set margins to 1 inch
+\usepackage{graphicx} % Allows including images
+\usepackage{float} % Allows for precise placement of figures
+\usepackage{amsmath} % Allows for math equations
+\usepackage{siunitx} % Allows for SI units
+\usepackage{placeins} % Makes sure images are in their respective sections by \FloatBarrier
+
+\begin{document}
+
+\title{Hardware Assignment Report}
+\author{EE22BTECH11217 -  Sayan Biswas}
+\date{}
+\maketitle
+\maketitle
+\section{Aim}
+Aim of this assignment is to make a python script which can make a playlist of songs and shuffle them. The songs must be shuffled such that each song in the playlist is played before it gets looped.
+\section{Overview}
+\begin{itemize}
+\item Use of numpy library is allowed to randomize playlist.
+\item The songs must be played through either terminal or GUI.
+\item Tkintker library has been used in the program to make the window.
+\item PyGame library has been used to play audio files.
+\item Soundfile library is used for reading and writing audio files. It provides a simple interface to access and manipulate audio data from various file formats, such as WAV, FLAC, OGG, and more.
+\item os module has been used to search file directory so as to play music from any desired music folder.
+\end{itemize}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.7\linewidth]{images/Pygameinterface.png}
+\caption{Interface of the Music Shuffler}
+\end{figure}
+\FloatBarrier
+\section{Working}
+\begin{enumerate}
+\item The program scans the default folder and makes a list of all the .wav files present in it.
+\item shuffle function in the program randomizes the order of the music files.
+\item Because the function only randomizes the order, there is no repetition of songs in the playlist, which is one of the conditions of the assignment.
+\item File managing is done completely through os module functions.
+\item Audio file playback is handled entirely through PyGame module functions.
+\end{enumerate}
+\subsection{Shuffle function}
+\begin{enumerate}
+\item It replaces two elements with the second element to be replaced taken from randint function of numpy.random.
+\item As it replaces the elements, there is no repetition in the playlist.
+\item This function is executed whenever the playlist reaches the last song and user presses next song button.
+\end{enumerate}
+\section{Notes}
+\begin{itemize}
+\item All of this code can easily be converted into a terminal script, as the functions are not part of the tkinter library.
+\item The program can be used to play .wav files present in any directory.
+\item This can be used to play .wav audio formats in a shuffled way, if the playback functions are changed accordingly.
+\end{itemize}
+\end{document}
